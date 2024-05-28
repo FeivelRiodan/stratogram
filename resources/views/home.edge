@@ -1,0 +1,14 @@
+@layout('layouts/app')
+@section('content')
+    <title>Stratogram - home</title>
+       <section>
+            <p>Hello world. You are viewing the page</p>
+            @if(auth.isAuthenticated)
+            <form action="/logout" method="post">
+                <button type="submit">Log Out</button>
+            </form>
+            @else
+            <a href="/login">Log in</a>
+            @endif
+        </section>
+@endsection

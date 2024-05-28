@@ -1,0 +1,10 @@
+@layout('layouts/app')
+@section('content')
+        <title>Stratogram</title>
+        <section>
+            This is the timeline wannabe
+            <!-- below is how you can call the user name on the page like "welcome, name" -->
+            {{auth.user.name}}
+            <!-- above is how you can call the user name on the page like "welcome, name-->
+        </section>
+@endsection

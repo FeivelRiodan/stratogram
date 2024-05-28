@@ -1,0 +1,54 @@
+@layout('layouts/app')
+@section('content')
+<link href="/dist/output.css" rel="stylesheet">
+<title>Stratogram - Signup</title>
+    <section class="flex justify-center py-10">
+        <div class="p-10">        
+            <article class="text-center border rounded-lg border-indigo-800 w-80 bg-cyan-100 p-2">        
+                <h1 class="font-bold text-black text-5xl mt-4" style="font-family:bobaland">Stratogram</h1>
+                <h3 class="font-serif text-slate-800 mt-3">Create new acount</h3>
+                <button class="bg-blue-500 border border-blue-600 rounded px-7 mt-4 py-1 font-bold text-white hover:bg-blue-600">Log in with Facebook</button>
+                <p class="my-1 font-bold"> OR </p>
+                <form action="/signup" method="post">
+                    <div>
+                        <label for="name"></label>
+                        <input class="border border-gray-800 rounded-sm my-1 py-2 px-4" type="text" placeholder="Name" name="name" id="name"/>
+                        @if (flashMessages.has('errors.name'))
+                        <small style="color: red;"><br>{{flashMessages.get('errors.name')}}</small>
+                        @endif
+                    </div>
+                    <div>
+                        <label for="email"></label>
+                        <input class="border border-gray-800 rounded-sm my-1 py-2 px-4" type="email" placeholder="E-mail address" name="email" id="email" />
+                        @if (flashMessages.has('errors.email'))
+                        <small style="color: red;"><br>{{flashMessages.get('errors.email')}}</small>
+                        @endif
+                    </div>
+                    <div>
+                        <label for="password"></label>
+                        <input class="border border-gray-800 rounded-sm my-1 py-2 px-4" type="password" placeholder="Password" name="password" id="password" />
+                        @if (flashMessages.has('errors.password'))
+                        <small style="color: red;"><br>{{flashMessages.get('errors.password')}}</small>
+                        @endif
+                    </div>
+                    <div>
+                        <label for="password_confirmation"></label>
+                        <input class="border border-gray-800 rounded-sm my-1 py-2 px-4" type="password_confirmation" placeholder="Confirm your password" name="password_confirmation" id="password_confirmation" />
+                        @if (flashMessages.has('errors.password_confirmation'))
+                        <small style="color: red;"><br>{{flashMessages.get('errors.password_confirmation')}}</small>
+                        @endif
+                    </div>
+                    <div>
+                        <input type="submit" class="bg-blue-500 border border-blue-600 rounded px-20 mt-4 py-1 font-bold text-white hover:bg-blue-600" value="Sign Up">
+                    </div>
+                </form>
+                <p class="text-sm px-8 py-2">By signing up, you agree to our Terms, Privacy Policy and Cookies Policy .</p>
+            </article>
+            <article class="text-center border rounded-lg border-indigo-800 w-80 mt-2.5 px-16 py-4 bg-cyan-100">        
+                <p class="text-sm">Have an account? <a href="/login" class="text-sm text-blue-500 hover:text-cyan-400">Log in</a></p>
+            </article>
+        </div>
+
+
+    </section>
+@endsection

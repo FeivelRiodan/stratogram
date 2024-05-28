@@ -1,0 +1,6 @@
+{
+  "assets/app.css": "http://localhost:8080/assets/app.css",
+  "assets/app.js": "http://localhost:8080/assets/app.js",
+  "assets/fonts/bobaland-webfont.woff": "http://localhost:8080/assets/fonts/bobaland-webfont.0dbbb842.woff",
+  "assets/fonts/Bobaland.otf": "http://localhost:8080/assets/fonts/Bobaland.87bd43c5.otf"
+}

@@ -1,0 +1,43 @@
+@layout('layouts/app')
+@section('content')
+<link href="/dist/output.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="public/img/favicon.png">
+<title>Stratogram - Login</title>
+    <section class="flex justify-center py-10">
+        <div class="p-10">        
+            <article class="text-center border rounded-lg border-indigo-800 w-80 bg-cyan-100 p-2">        
+                <h1 class="font-bold text-black text-5xl mt-4" style="font-family:bobaland">Stratogram</h1>
+                <h3 class="font-serif text-slate-800 mt-3">Log in</h3>
+                <button class="bg-blue-500 border border-blue-600 rounded px-7 mt-4 py-1 font-bold text-white hover:bg-blue-600">Log in with Facebook</button>
+                <p class="my-1 font-bold"> OR </p>
+                <form action="/login" method="post">
+                    <div>
+                        <label for="email"></label>
+                        <input class="border border-gray-800 rounded-sm my-1 py-2 px-4" type="email" placeholder="E-mail address" name="email" id="email" />
+                        @if (flashMessages.has('errors.email'))
+                        <small style="color: red;"><br>{{flashMessages.get('errors.email')}}</small>
+                        @endif
+                    </div>
+                    <div>
+                        <label for="password"></label>
+                        <input class="border border-gray-800 rounded-sm my-1 py-2 px-4" type="password" placeholder="Password" name="password" id="password" />
+                        @if (flashMessages.has('errors.password'))
+                        <small style="color: red;"><br>{{flashMessages.get('errors.password')}}</small>
+                        @endif
+                    </div>
+                    <div>
+                        <input type="submit" class="bg-blue-500 border border-blue-600 rounded px-20 mt-4 py-1 font-bold text-white hover:bg-blue-600" value="Log In">
+                    </div>
+                </form>
+            </article>
+            <article class="text-center border rounded-lg border-indigo-800 w-80 mt-2.5 px-12 py-4 bg-cyan-100">        
+                <p class="text-sm">Don't have an account? <a href="/signup" class="text-sm text-blue-500 hover:text-cyan-400">Sign up</a></p>
+            </article>
+            <aside>
+                <img src="public/img/favicon.png" alt="">
+            </aside>
+        </div>
+
+
+    </section>
+@endsection
